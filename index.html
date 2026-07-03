@@ -77,33 +77,11 @@
             transform: translate(-50%, -60%);
         }
 
-        /* MONOGRAM HEART CONTAINER */
-        .monogram-frame {
-            position: relative;
-            width: 160px; height: 160px;
-            margin: 0 auto 15px auto;
-            display: flex; justify-content: center; align-items: center;
-        }
-        .heart-svg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            stroke: var(--accent-gold);
-            stroke-width: 1.2; fill: transparent;
-            opacity: 0.85; filter: drop-shadow(0 0 8px rgba(197,160,89,0.3));
-            animation: gentlePulse 2.5s infinite ease-in-out;
-        }
-        @keyframes gentlePulse {
-            0%, 100% { transform: scale(1); opacity: 0.75; }
-            50% { transform: scale(1.04); opacity: 0.95; }
-        }
-
         .monogram {
             font-family: 'Pinyon Script', cursive;
-            font-size: 5rem; color: var(--accent-gold);
-            margin: 0; line-height: 1;
-            padding-bottom: 5px;
+            font-size: 6rem; color: var(--accent-gold);
+            margin: 0 0 15px 0; line-height: 1;
             text-shadow: 0 0 15px rgba(197,160,89,0.2);
-            z-index: 2;
         }
 
         .cover-title {
@@ -145,7 +123,7 @@
             to { background-position: 200% center; }
         }
 
-        /* ATTRACTIVE LUXURY SCROLLABLE INTERIOR BACKGROUND - TRUE BLACK */
+        /* SCROLLABLE INTERIOR BACKGROUND - TRUE BLACK */
         .wrapper {
             width: 100%; 
             height: 100dvh;
@@ -156,7 +134,6 @@
             border: 12px solid #000000;
             position: relative;
             
-            /* Enhanced Premium Black Minimal Mesh Pattern Background */
             background-color: #000000;
             background-image: 
                 radial-gradient(circle at 50% 30%, rgba(20, 20, 20, 0.95) 0%, #000000 80%),
@@ -167,13 +144,13 @@
             background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
         }
 
-        /* HIGH PERFORMANCE CANVAS POPPER SYSTEM */
+        /* HIGH PERFORMANCE CANVAS POPPER SYSTEM OVERLAYING THE CARDS */
         #popper-canvas {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             pointer-events: none;
-            z-index: 5;
+            z-index: 20; /* Brought to the absolute top layer to cross into slides */
         }
 
         /* SECTION VIEWPORTS */
@@ -259,7 +236,7 @@
             max-width: 340px; font-weight: 500; opacity: 0; transform: translateY(-10px);
         }
 
-        /* ATTRACTIVE TYPOGRAPHIC DROP SHADOW EFFECTS */
+        /* DROP SHADOW EFFECTS */
         .groom-name {
             font-family: 'Pinyon Script', cursive; font-size: 5.2rem; 
             margin: 0; font-weight: 400; color: var(--primary-dark); line-height: 0.9;
@@ -441,15 +418,7 @@
         <div class="door door-right"></div>
 
         <div class="cover-content-center">
-            <!-- EMBEDDED HEART OUTLINE AROUND MONOGRAM -->
-            <div class="monogram-frame">
-                <svg class="heart-svg" viewBox="0 0 32 29.6">
-                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-                </svg>
-                <div class="monogram">F&B</div>
-            </div>
-            
+            <div class="monogram">F&B</div>
             <p class="cover-title">Wedding Invitation</p>
             
             <div class="cover-names">Fahnas</div>
@@ -637,8 +606,8 @@
                 }
             }
 
-            // Populate burst arrays
-            for (let i = 0; i < 120; i++) {
+            // Populate burst arrays - Expanded to 150 particles for a richer burst across layers
+            for (let i = 0; i < 150; i++) {
                 particles.push(new ConfettiParticle());
             }
 
